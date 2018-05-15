@@ -1,5 +1,14 @@
 language: csharp
 solution: braintree_aspnet_example.sln
+
+install:
+  - sudo apt-get install nunit-console
+  - travis_retry nuget restore braintree_aspnet_example.sln
+
+script:
+  - msbuild braintree_aspnet_example.sln
+  - nunit-console BraintreeASPExampleTests/bin/Debug/net452/BraintreeASPExampleTests.dll
+
 notifications:
   email:
     - "external-ci-notifications+braintree_aspnet_example@getbraintree.com"
