@@ -17,7 +17,7 @@ namespace BraintreeASPExampleTests
         public void TestForClientToken()
         {
             var clientTokenMock = new Mock<IClientTokenGateway>();
-            clientTokenMock.Setup(mock => mock.generate(null)).Returns("CLIENT_TOKEN");
+            clientTokenMock.Setup(mock => mock.Generate(null)).Returns("CLIENT_TOKEN");
             var braintreeGatewayMock = new Mock<BraintreeGateway>();
             braintreeGatewayMock.Setup(mock => mock.ClientToken).Returns(clientTokenMock.Object);
             var braintreeConfigurationMock = new Mock<IBraintreeConfiguration>();
