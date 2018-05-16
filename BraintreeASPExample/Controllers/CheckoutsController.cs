@@ -40,7 +40,7 @@ namespace BraintreeASPExample.Controllers
             }
             catch (FormatException e)
             {
-                TempData["Flash"] = "Error: 81503: Amount is an invalid format.";
+                TempData["Flash"] = "Error: 81503: Amount is an invalid format. " + e;
                 return RedirectToAction("New");
             }
 
